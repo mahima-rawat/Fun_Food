@@ -1,0 +1,29 @@
+1. app -> page.jsx : home page 
+
+2. app -> layout.jsx : main page and gets render
+
+3. app -> api -> auth -> [...nextauth] -> route.js: 
+                - sets up authentictaion for the app using nextauth using google 
+                - integrates with MangoDB to manage user session and vreate new user records.
+
+4. app -> prompt -> [id] -> route.js :
+                 - provide three API endpoints for managing prompts
+                 - includes operations to get, update and delete prompts 
+
+5. app -> prompt -> new -> route.js: 
+                 - handles POST requests for creating a new prompt 
+
+6. app -> user -> route.js:
+                 -  designed to fetch prompts created by a specific user from a MongoDB database
+
+7. components -> feed.jsx : feed page that displays a list of prompts 
+              -> form.jsx :used to create or update a post. 
+              -> Nav.jsx : navigation bar handles both desktop and mobile navigation, user authentication with NextAuth, and toggling a dropdown menu for mobile users.
+              -> profile: displays a user's profile information and a list of prompts (or posts) associated with that user.allows for editing and deleting these prompts. Here’s a detailed breakdown of the component
+              -> PromptCard:  component is a React component that displays a prompt (or post) along with its creator’s details. It also provides functionality for copying the prompt text and interacting with it based on the user's session and the current path.
+              -> Provider: wrapper component used to provide the NextAuth.js session context to your React application. 
+
+8.  models -> prompt.js :defines a Mongoose schema and model for handling "prompts" in a MongoDB database
+            -> user.js : Mongoose schema and model for handling "users" in a MongoDB database. 
+
+9. utils-> database.js :    manages the connection to a MongoDB database using Mongoose.                         
